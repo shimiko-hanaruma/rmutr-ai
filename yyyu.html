@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="th" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สาขาวิชาวิศวกรรมปัญญาประดิษฐ์ | คณะวิศวกรรมศาสตร์ มทร.รัตนโกสินทร์ ศาลายา</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font: Prompt & Sarabun -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Theme Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'Sarabun', 'sans-serif'],
+                    },
+                    colors: {
+                        rmutr: {
+                            navy: '#0b1120',
+                            card: '#161b26',
+                            gold: '#f59e0b',
+                            cyan: '#00f2fe',
+                            purple: '#7f00ff',
+                            neon: '#38ef7d',
+                            accent: '#4facfe'
+                        }
+                    },
+                    backgroundImage: {
+                        'cyber-grid': 'linear-gradient(to right, rgba(0, 242, 254, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 242, 254, 0.05) 1px, transparent 1px)',
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s infinite alternate',
+                        'float': 'float 5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%': { boxShadow: '0 0 15px rgba(0, 242, 254, 0.2)' },
+                            '100%': { boxShadow: '0 0 35px rgba(127, 0, 255, 0.6)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(22, 27, 38, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 242, 254, 0.15);
+        }
+        .glass-panel-hover:hover {
+            border-color: rgba(0, 242, 254, 0.5);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.25);
+        }
+        .cyber-grid-bg {
+            background-size: 36px 36px;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1120;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f2fe;
+        }
+    </style>
+</head>
+<body class="bg-rmutr-navy text-slate-100 font-sans selection:bg-rmutr-cyan selection:text-black overflow-x-hidden">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-slate-800/80 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Crest & Brand Title -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <img src="574278223_813880894698581_2662769500873303401_n.jpg" 
+                     alt="AI Engineering RMUTR Logo" 
+                     class="h-12 w-auto object-contain drop-shadow-[0_0_8px_rgba(0,242,254,0.3)] group-hover:scale-105 transition-transform"
+                     onerror="this.src='https://placehold.co/100x120/0b1120/00f2fe?text=AI+RMUTR'">
+                
+                <div class="border-l border-slate-700 pl-3">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-lg font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-rmutr-cyan">
+                            AI Engineering RMUTR
+                        </span>
+                    </div>
+                    <span class="block text-xs text-slate-400 font-light">วิศวกรรมปัญญาประดิษฐ์ มทร.รัตนโกสินทร์ ศาลายา</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden xl:flex items-center space-x-6 text-sm font-medium">
+                <a href="#home" class="text-rmutr-cyan hover:text-white transition-colors">หน้าหลัก</a>
+                <a href="#about" class="text-slate-300 hover:text-rmutr-cyan transition-colors">เกี่ยวกับหลักสูตร</a>
+                <a href="#faculty" class="text-slate-300 hover:text-rmutr-cyan transition-colors">บุคลากร</a>
+                <a href="#curriculum" class="text-slate-300 hover:text-rmutr-cyan transition-colors">แผนการเรียน 134 นก.</a>
+                <a href="#plos" class="text-slate-300 hover:text-rmutr-cyan transition-colors">ผลลัพธ์การเรียนรู้ (PLOs)</a>
+                <a href="#careers" class="text-slate-300 hover:text-rmutr-cyan transition-colors">อาชีพรองรับ</a>
+                <a href="#tuition" class="text-slate-300 hover:text-rmutr-cyan transition-colors">ค่าธรรมเนียม/คำนวณ</a>
+            </nav>
+
+            <!-- Social CTA -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <a href="https://www.facebook.com/ai.rmutr/" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center space-x-2 px-3.5 py-2 rounded-xl glass-panel border-blue-500/30 text-blue-400 hover:text-white hover:bg-blue-600 transition-all text-xs font-semibold">
+                    <i class="fa-brands fa-facebook text-base"></i>
+                    <span>@ai.rmutr</span>
+                </a>
+                <a href="#tuition" class="px-4 py-2 rounded-xl bg-gradient-to-r from-rmutr-cyan to-rmutr-purple text-slate-950 font-bold text-xs shadow-lg shadow-rmutr-cyan/20 hover:scale-105 transition-all">
+                    <i class="fa-solid fa-graduation-cap mr-1"></i> สมัครเรียน 2569
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="xl:hidden text-slate-300 hover:text-white p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden glass-panel border-t border-slate-800 px-4 pt-3 pb-6 space-y-2">
+            <a href="#home" class="block px-3 py-2 rounded-lg text-rmutr-cyan font-medium bg-slate-800/50">หน้าหลัก</a>
+            <a href="#about" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/50">เกี่ยวกับหลักสูตร</a>
+            <a href="#faculty" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/50">คณาจารย์และบุคลากร</a>
+            <a href="#curriculum" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/50">แผนการเรียน (134 หน่วยกิต)</a>
+            <a href="#plos" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/50">ผลลัพธ์การเรียนรู้ (PLOs)</a>
+            <a href="#careers" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/50">อาชีพรองรับ</a>
+            <a href="#tuition" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/50">ค่าธรรมเนียม/ประมาณการ</a>
+            <a href="https://www.facebook.com/ai.rmutr/" target="_blank" class="block text-center px-4 py-2.5 rounded-lg bg-blue-600 text-white font-bold text-sm">
+                <i class="fa-brands fa-facebook mr-2"></i> ติดตาม Facebook AI RMUTR
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-cyber-grid cyber-grid-bg">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-rmutr-purple/20 rounded-full blur-[150px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[380px] h-[380px] bg-rmutr-cyan/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full glass-panel border-rmutr-cyan/40 text-rmutr-cyan text-xs sm:text-sm font-medium">
+                        <span class="flex h-2 w-2 rounded-full bg-rmutr-cyan animate-ping"></span>
+                        <span>หลักสูตรวิศวกรรมศาสตรบัณฑิต (หลักสูตรใหม่ พ.ศ. 2569)</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        สาขาวิชาวิศวกรรมปัญญาประดิษฐ์ <br class="hidden sm:inline"/>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-rmutr-cyan via-blue-400 to-rmutr-purple">
+                            AI Engineering (RMUTR)
+                        </span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
+                        คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์ พื้นที่ศาลายา <br/>
+                        <span class="text-rmutr-cyan font-normal">"สร้างสรรค์นวัตกรปัญญาประดิษฐ์ ขับเคลื่อนอุตสาหกรรมในยุคดิจิทัล ผสมผสานองค์ความรู้ขั้นสูง สู่การพัฒนาที่ยั่งยืน"</span>
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#curriculum" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-rmutr-cyan to-blue-600 text-slate-950 font-bold shadow-lg shadow-rmutr-cyan/25 hover:shadow-rmutr-cyan/40 hover:scale-105 transition-all text-center">
+                            <i class="fa-solid fa-book-open mr-2"></i> โครงสร้างหลักสูตร 134 นก.
+                        </a>
+                        <a href="https://www.facebook.com/ai.rmutr/" target="_blank" class="w-full sm:w-auto px-7 py-3.5 rounded-xl glass-panel hover:bg-blue-600/20 text-white font-medium border border-blue-500/40 hover:border-blue-400 transition-all text-center flex items-center justify-center">
+                            <i class="fa-brands fa-facebook mr-2 text-blue-400 text-lg"></i> เพจ AI RMUTR Official
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-6 border-t border-slate-800/80">
+                        <div class="glass-panel p-3.5 rounded-xl text-center">
+                            <div class="text-xl sm:text-3xl font-extrabold text-rmutr-cyan">134</div>
+                            <div class="text-xs text-slate-400 mt-1">หน่วยกิตตลอดหลักสูตร</div>
+                        </div>
+                        <div class="glass-panel p-3.5 rounded-xl text-center">
+                            <div class="text-xl sm:text-3xl font-extrabold text-rmutr-purple">4 ปี / CWIE</div>
+                            <div class="text-xs text-slate-400 mt-1">สหกิจศึกษาเข้มข้น</div>
+                        </div>
+                        <div class="glass-panel p-3.5 rounded-xl text-center">
+                            <div class="text-xl sm:text-3xl font-extrabold text-rmutr-neon">15,000฿</div>
+                            <div class="text-xs text-slate-400 mt-1">ค่าธรรมเนียม/ภาคการศึกษา</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="relative w-full max-w-md animate-float">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-rmutr-cyan to-rmutr-purple rounded-3xl blur-xl opacity-60"></div>
+                        
+                        <div class="relative glass-panel rounded-2xl p-6 border border-slate-700 bg-slate-900/90 shadow-2xl">
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                                <div class="flex items-center space-x-3">
+                                    <img src="574278223_813880894698581_2662769500873303401_n.jpg" 
+                                         alt="AI Engineering RMUTR Logo" 
+                                         class="h-10 w-auto object-contain"
+                                         onerror="this.src='https://placehold.co/100x120/0b1120/00f2fe?text=AI+RMUTR'">
+                                    <div>
+                                        <h4 class="text-xs font-bold text-slate-200">มทร.รัตนโกสินทร์ ศาลายา</h4>
+                                        <p class="text-[10px] text-rmutr-cyan">คณะวิศวกรรมศาสตร์</p>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-rmutr-neon text-[11px] font-mono border border-slate-700">พ.ศ. 2569</span>
+                            </div>
+
+                            <div class="mt-4 font-mono text-xs space-y-2 text-slate-300 bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                                <p class="text-slate-500">// AI Engineering Core Stack</p>
+                                <p><span class="text-rmutr-cyan">const</span> program = {</p>
+                                <p class="pl-4">degree: <span class="text-emerald-400">"วิศวกรรมศาสตรบัณฑิต (วศ.บ.)"</span>,</p>
+                                <p class="pl-4">coreTech: [<span class="text-yellow-300">"Python"</span>, <span class="text-yellow-300">"ML/DL"</span>, <span class="text-yellow-300">"Computer Vision"</span>, <span class="text-yellow-300">"LLM"</span>, <span class="text-yellow-300">"Edge AI"</span>],</p>
+                                <p class="pl-4">fullStack: [<span class="text-yellow-300">"Front-End"</span>, <span class="text-yellow-300">"Back-End"</span>, <span class="text-yellow-300">"Cloud & Container"</span>],</p>
+                                <p class="pl-4">cooperativeEdu: <span class="text-rmutr-cyan">true</span></p>
+                                <p>};</p>
+                            </div>
+
+                            <div class="mt-5 grid grid-cols-2 gap-2 text-xs">
+                                <div class="flex items-center space-x-2 bg-slate-800/50 p-2 rounded-lg text-slate-300 border border-slate-700/50">
+                                    <i class="fa-solid fa-microchip text-rmutr-cyan"></i>
+                                    <span>Edge AI & Cloud</span>
+                                </div>
+                                <div class="flex items-center space-x-2 bg-slate-800/50 p-2 rounded-lg text-slate-300 border border-slate-700/50">
+                                    <i class="fa-solid fa-brain text-rmutr-purple"></i>
+                                    <span>LLM & Computer Vision</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section id="about" class="py-20 bg-slate-950 relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-xs uppercase font-bold tracking-widest text-rmutr-cyan mb-2">Program Overview</h2>
+                    <h3 class="text-3xl font-extrabold text-white mb-4">จุดเด่นและปรัชญาของหลักสูตร</h3>
+                    <p class="text-slate-300 leading-relaxed mb-6 font-light">
+                        หลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมปัญญาประดิษฐ์ (หลักสูตรใหม่ พ.ศ. 2569) คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์ พื้นที่ศาลายา มุ่งเน้นสร้างบัณฑิตที่มีทักษะการปฏิบัติงานจริง ตอบโจทย์อุตสาหกรรมด้วยการบูรณาการ Full Stack Development, Machine Learning, Computer Vision, Edge AI และ Large Language Models (LLM)
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 rounded-lg bg-rmutr-cyan/10 flex items-center justify-center text-rmutr-cyan font-bold mt-1">
+                                <i class="fa-solid fa-check text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">การเรียนรู้แบบบูรณาการ CWIE</h4>
+                                <p class="text-slate-400 text-xs">ผสมผสานทฤษฎีและสหกิจศึกษาในสถานประกอบการจริงเพื่อสั่งสมประสบการณ์ก่อนจบการศึกษา</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 rounded-lg bg-rmutr-purple/10 flex items-center justify-center text-rmutr-purple font-bold mt-1">
+                                <i class="fa-solid fa-code text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">ทักษะวิศวกรรม AI แบบครบวงจร</h4>
+                                <p class="text-slate-400 text-xs">ครอบคลุมทั้ง Front-End, Back-End, MLOps, Data Engineering และการประยุกต์ใช้ปัญญาประดิษฐ์ในระดับอุตสาหกรรม</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl border border-slate-800">
+                    <h4 class="text-lg font-bold text-white mb-4 border-b border-slate-800 pb-3 flex items-center justify-between">
+                        <span>โครงสร้างหมวดวิชา (134 หน่วยกิต)</span>
+                        <span class="text-xs font-normal text-rmutr-cyan">หลักสูตร 4 ปี</span>
+                    </h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <span class="text-slate-300">1. หมวดวิชาศึกษาทั่วไป</span>
+                            <span class="font-bold text-rmutr-cyan">24 หน่วยกิต</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <span class="text-slate-300">2. หมวดวิชาเฉพาะ (แกน / บังคับ / เลือก)</span>
+                            <span class="font-bold text-rmutr-purple">104 หน่วยกิต</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <span class="text-slate-300">3. หมวดวิชาเลือกเสรี</span>
+                            <span class="font-bold text-rmutr-neon">6 หน่วยกิต</span>
+                        </div>
+                    </div>
+                    <div class="mt-5 p-3.5 rounded-xl bg-rmutr-cyan/10 border border-rmutr-cyan/30 text-xs text-rmutr-cyan">
+                        <i class="fa-solid fa-circle-info mr-1.5"></i> ทุกรายวิชาได้รับการออกแบบตามกรอบมาตรฐานคุณวุฒิระดับอุดมศึกษา และเน้นทักษะปฏิบัติตามมาตรฐานวิศวกรรม
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Faculty & Staff -->
+    <section id="faculty" class="py-20 bg-rmutr-navy relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-rmutr-cyan mb-2">Faculty Members</h2>
+                <p class="text-3xl font-extrabold text-white">คณาจารย์ประจำสาขาวิชา</p>
+                <p class="text-slate-400 mt-2 text-sm">ทีมอาจารย์ผู้เชี่ยวชาญด้านวิศวกรรมปัญญาประดิษฐ์ มทร.รัตนโกสินทร์</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Person 1 -->
+                <div class="glass-panel glass-panel-hover rounded-2xl overflow-hidden border border-slate-800 flex flex-col items-center p-6 text-center group">
+                    <div class="w-32 h-40 rounded-xl overflow-hidden mb-4 border-2 border-rmutr-cyan/40 shadow-lg group-hover:scale-105 transition-transform bg-slate-900">
+                        <img src="1.jpg" alt="อาจารย์สัญญา สมัยมาก" class="w-full h-full object-cover">
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-rmutr-cyan/10 text-rmutr-cyan text-[11px] font-bold mb-2">
+                        หัวหน้าสาขา
+                    </span>
+                    <h3 class="text-base font-bold text-white mb-1">อาจารย์สัญญา สมัยมาก</h3>
+                    <p class="text-xs text-slate-400">หัวหน้าสาขาวิชาวิศวกรรมปัญญาประดิษฐ์</p>
+                </div>
+
+                <!-- Person 2 -->
+                <div class="glass-panel glass-panel-hover rounded-2xl overflow-hidden border border-slate-800 flex flex-col items-center p-6 text-center group">
+                    <div class="w-32 h-40 rounded-xl overflow-hidden mb-4 border-2 border-slate-700 shadow-lg group-hover:scale-105 transition-transform bg-slate-900">
+                        <img src="2.jpg" alt="อาจารย์ฌานิน หาญณรงค์" class="w-full h-full object-cover">
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-[11px] font-medium mb-2">
+                        อาจารย์ประจำสาขา
+                    </span>
+                    <h3 class="text-base font-bold text-white mb-1">อาจารย์ฌานิน หาญณรงค์</h3>
+                    <p class="text-xs text-slate-400">อาจารย์ประจำสาขาวิชาวิศวกรรมปัญญาประดิษฐ์</p>
+                </div>
+
+                <!-- Person 3  -->
+                <div class="glass-panel glass-panel-hover rounded-2xl overflow-hidden border border-slate-800 flex flex-col items-center p-6 text-center group">
+                    <div class="w-32 h-40 rounded-xl overflow-hidden mb-4 border-2 border-slate-800 shadow-lg group-hover:scale-105 transition-transform bg-slate-900/80 flex flex-col items-center justify-center text-slate-900">
+                        <img src="3.jpg" alt="ผศ.ดร. พิชชานันท์ วงศ์ศิริธร" class="w-full h-full object-cover">
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-[11px] font-medium mb-2">
+                        อาจารย์ประจำสาขา
+                    </span>
+                    <h3 class="text-base font-bold text-white mb-1">ผศ.ดร. พิชชานันท์ วงศ์ศิริธร</h3>
+                    <p class="text-xs text-slate-400">อาจารย์ประจำสาขาวิชาวิศวกรรมปัญญาประดิษฐ์</p>
+                </div>
+
+                <!-- Person 4 -->
+                <div class="glass-panel glass-panel-hover rounded-2xl overflow-hidden border border-slate-800 flex flex-col items-center p-6 text-center group">
+                    <div class="w-32 h-40 rounded-xl overflow-hidden mb-4 border-2 border-slate-700 shadow-lg group-hover:scale-105 transition-transform bg-slate-900">
+                        <img src="4.jpg" alt="ดร.จุฑารัตน์ รุ่งวารินทร์" class="w-full h-full object-cover">
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-[11px] font-medium mb-2">
+                        อาจารย์ประจำสาขา
+                    </span>
+                    <h3 class="text-base font-bold text-white mb-1">ดร.จุฑารัตน์ รุ่งวารินทร์</h3>
+                    <p class="text-xs text-slate-400">อาจารย์ประจำสาขาวิชาวิศวกรรมปัญญาประดิษฐ์</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-20 relative bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-rmutr-cyan mb-2">Curriculum Study Plan</h2>
+                <p class="text-3xl font-extrabold text-white">แผนการเรียน 4 ปี (หลักสูตร พ.ศ. 2569)</p>
+                <p class="text-slate-400 mt-2 text-sm">เลือกดูรายวิชาเด่นในแต่ละชั้นปีที่ระบุไว้ในเล่มหลักสูตรสาขาวิชาวิศวกรรมปัญญาประดิษฐ์</p>
+            </div>
+
+            <!-- Year Tabs -->
+            <div class="flex justify-center mb-10 overflow-x-auto pb-2">
+                <div class="glass-panel p-1.5 rounded-2xl flex space-x-2 border border-slate-800">
+                    <button onclick="switchYear(1)" id="year-btn-1" class="curriculum-tab-btn px-5 py-2 rounded-xl text-sm transition-all bg-gradient-to-r from-rmutr-cyan to-blue-600 text-slate-950 font-bold">ปีที่ 1: พื้นฐานวิศวกรรม & AI</button>
+                    <button onclick="switchYear(2)" id="year-btn-2" class="curriculum-tab-btn px-5 py-2 rounded-xl text-sm transition-all text-slate-400 hover:text-white">ปีที่ 2: Python, Full Stack 1 & ML</button>
+                    <button onclick="switchYear(3)" id="year-btn-3" class="curriculum-tab-btn px-5 py-2 rounded-xl text-sm transition-all text-slate-400 hover:text-white">ปีที่ 3: Edge AI, Vision, Full Stack 2 & Cloud</button>
+                    <button onclick="switchYear(4)" id="year-btn-4" class="curriculum-tab-btn px-5 py-2 rounded-xl text-sm transition-all text-slate-400 hover:text-white">ปีที่ 4: NLP, LLM, Project & CWIE</button>
+                </div>
+            </div>
+
+            <!-- Courses Grid -->
+            <div id="year-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PLOs Section -->
+    <section id="plos" class="py-20 bg-rmutr-navy border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-rmutr-cyan mb-2">Learning Outcomes</h2>
+                <p class="text-3xl font-extrabold text-white">ผลลัพธ์การเรียนรู้ระดับหลักสูตร (PLOs)</p>
+                <p class="text-slate-400 mt-2 text-sm">การันตีสมรรถนะผู้เรียน 8 ด้านเมื่อสำเร็จการศึกษาวิศวกรรมปัญญาประดิษฐ์ มทร.รัตนโกสินทร์</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-rmutr-cyan transition-all">
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-rmutr-cyan/10 text-rmutr-cyan font-bold">PLO 1</span>
+                    <h4 class="font-bold text-white mt-3 text-base">คุณธรรม จริยธรรม และจรรยาบรรณวิศวกร</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">ปฏิบัติตนตามจรรยาบรรณวิชาชีพ มีความรับผิดชอบต่อสังคมและจริยธรรมปัญญาประดิษฐ์</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-rmutr-cyan transition-all">
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-rmutr-cyan/10 text-rmutr-cyan font-bold">PLO 2</span>
+                    <h4 class="font-bold text-white mt-3 text-base">พื้นฐานคณิตศาสตร์และวิศวกรรม</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">ประยุกต์ใช้ความรู้ด้านคณิตศาสตร์ สถิติ และหลักการวิศวกรรมในการแก้ปัญหาทาง AI</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-rmutr-cyan transition-all">
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-rmutr-cyan/10 text-rmutr-cyan font-bold">PLO 3</span>
+                    <h4 class="font-bold text-white mt-3 text-base">การวิเคราะห์และพัฒนาระบบ AI</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">ออกแบบ พัฒนา และทดสอบโมเดล Machine Learning, Computer Vision และ NLP ได้อย่างมีประสิทธิภาพ</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-rmutr-cyan transition-all">
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-rmutr-cyan/10 text-rmutr-cyan font-bold">PLO 4</span>
+                    <h4 class="font-bold text-white mt-3 text-base">Full Stack & Cloud Integration</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">พัฒนาซอฟต์แวร์ประยุกต์แบบ Full Stack ร่วมกับระบบ Cloud, Containers และ Edge Devices</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-rmutr-purple transition-all">
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-rmutr-purple/20 text-rmutr-purple font-bold">PLO 5</span>
+                    <h4 class="font-bold text-white mt-3 text-base">การสื่อสารและการทำงานร่วมกัน</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">สื่อสารเทคนิควิชาการ นำเสนอผลงาน และทำงานร่วมกับทีมข้ามสายงานได้อย่างมืออาชีพ</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-rmutr-purple transition-all">
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-rmutr-purple/20 text-rmutr-purple font-bold">PLO 6</span>
+                    <h4 class="font-bold text-white mt-3 text-base">การคิดวิเคราะห์เชิงวิจัยและนวัตกรรม</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">คิดค้น สร้างสรรค์นวัตกรรมด้านปัญญาประดิษฐ์ เพื่อตอบโจทย์ภาคอุตสาหกรรมและชุมชน</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-rmutr-purple transition-all">
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-rmutr-purple/20 text-rmutr-purple font-bold">PLO 7</span>
+                    <h4 class="font-bold text-white mt-3 text-base">ทักษะการเรียนรู้ตลอดชีวิต (Lifelong Learning)</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">ติดตามเทคโนโลยี AI และเครื่องมือใหม่ๆ เพื่อพัฒนาตนเองอย่างต่อเนื่องในยุคดิจิทัล</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-rmutr-purple transition-all">
+                    <span class="text-xs font-mono px-2.5 py-1 rounded bg-rmutr-purple/20 text-rmutr-purple font-bold">PLO 8</span>
+                    <h4 class="font-bold text-white mt-3 text-base">การบริหารจัดการและสหกิจศึกษา (CWIE)</h4>
+                    <p class="text-slate-400 text-xs mt-2 leading-relaxed">บริหารจัดการโครงการและปรับตัวเข้ากับการทำงานในสถานประกอบการจริงผ่านระบบ CWIE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs uppercase font-bold tracking-widest text-rmutr-cyan mb-2">Career Opportunities</h2>
+                <p class="text-3xl font-extrabold text-white">อาชีพหลังสำเร็จการศึกษา</p>
+                <p class="text-slate-400 mt-2 text-sm">รองรับความต้องการของตลาดงานเทคโนโลยีชั้นนำทั้งในและต่างประเทศ</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-panel glass-panel-hover p-6 rounded-2xl transition-all border border-slate-800">
+                    <div class="w-12 h-12 rounded-xl bg-rmutr-cyan/10 flex items-center justify-center text-rmutr-cyan text-2xl mb-4">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Full Stack AI Developer / AI Engineer</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">ผู้พัฒนาระบบปัญญาประดิษฐ์ เชื่อมต่อโมเดล AI เข้ากับแอปพลิเคชัน Front-End และ Back-End</p>
+                </div>
+
+                <div class="glass-panel glass-panel-hover p-6 rounded-2xl transition-all border border-slate-800">
+                    <div class="w-12 h-12 rounded-xl bg-rmutr-purple/10 flex items-center justify-center text-rmutr-purple text-2xl mb-4">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Data Scientist & Data Engineer</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">นักวิทยาศาสตร์ข้อมูลและวิศวกรข้อมูล ออกแบบคลังข้อมูลและวิเคราะห์ Big Data เชิงลึก</p>
+                </div>
+
+                <div class="glass-panel glass-panel-hover p-6 rounded-2xl transition-all border border-slate-800">
+                    <div class="w-12 h-12 rounded-xl bg-rmutr-neon/10 flex items-center justify-center text-rmutr-neon text-2xl mb-4">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Intelligent System / Edge AI Developer</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">ผู้พัฒนาระบบสมองกลฝังตัวและอุปกรณ์ Edge Computing ให้สามารถประมวลผล AI ได้ในตัว</p>
+                </div>
+
+                <div class="glass-panel glass-panel-hover p-6 rounded-2xl transition-all border border-slate-800">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-400/10 flex items-center justify-center text-yellow-400 text-2xl mb-4">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">AI Researcher & Tech Startup Entrepreneur</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">นักวิจัยวิศวกรรมปัญญาประดิษฐ์ หรือผู้ประกอบการเทคโนโลยีสตาร์ทอัพยุคใหม่</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tuition & Calculator -->
+    <section id="tuition" class="py-20 bg-rmutr-navy border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-5 space-y-4">
+                    <h2 class="text-xs uppercase font-bold tracking-widest text-rmutr-cyan">Tuition & Admission</h2>
+                    <h3 class="text-3xl font-extrabold text-white">ค่าธรรมเนียมการศึกษา</h3>
+                    <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-rmutr-cyan/30">
+                        <span class="text-slate-400 text-xs">อัตราค่าธรรมเนียมแบบเหมาจ่าย</span>
+                        <div class="text-4xl font-extrabold text-rmutr-cyan mt-1">15,000 <span class="text-lg font-normal text-slate-300">บาท / ภาคการศึกษา</span></div>
+                        <p class="text-xs text-slate-400 mt-2">รวมค่าบำรุงมหาวิทยาลัย ค่าใช้งานห้องปฏิบัติการคอมพิวเตอร์และอินเทอร์เน็ตแล้ว</p>
+                    </div>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <p><i class="fa-solid fa-check text-rmutr-neon mr-2"></i>ระยะเวลาศึกษาตลอดหลักสูตร 4 ปี (8 ภาคการศึกษา)</p>
+                        <p><i class="fa-solid fa-check text-rmutr-neon mr-2"></i>รองรับทุนการศึกษา และ กยศ. / กรอ.</p>
+                        <p><i class="fa-solid fa-location-dot text-rmutr-cyan mr-2"></i>เรียนที่ คณะวิศวกรรมศาสตร์ มทร.รัตนโกสินทร์ ศาลายา จ.นครปฐม</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-slate-800">
+                        <h4 class="text-xl font-bold text-white mb-2 flex items-center">
+                            <i class="fa-solid fa-calculator text-rmutr-cyan mr-2"></i> เครื่องมือคำนวณประมาณการค่าใช้จ่ายตลอดหลักสูตร
+                        </h4>
+                        <p class="text-xs text-slate-400 mb-6">ปรับจำนวนภาคการศึกษาที่แผนจะเรียนเพื่อดูประมาณการค่าเรียนรวม</p>
+
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between text-sm font-medium mb-2">
+                                    <span class="text-slate-300">จำนวนภาคการศึกษาที่เรียน:</span>
+                                    <span id="sem-count-display" class="text-rmutr-cyan font-bold">8 ภาคการศึกษา (4 ปี)</span>
+                                </div>
+                                <input type="range" id="sem-slider" min="7" max="10" value="8" step="1" 
+                                       class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-rmutr-cyan"
+                                       oninput="updateCalculator()">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-800">
+                                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                                    <span class="text-xs text-slate-400 block">จำนวนหน่วยกิตรวม</span>
+                                    <span class="text-xl font-bold text-white">134 หน่วยกิต</span>
+                                </div>
+                                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                                    <span class="text-xs text-slate-400 block">ประมาณการค่าธรรมเนียมรวม</span>
+                                    <span id="total-fee-display" class="text-xl font-bold text-rmutr-cyan">120,000 บาท</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-800/50 flex items-center justify-between">
+                                <div class="text-xs text-slate-300">
+                                    <span class="font-bold text-white">สนใจเข้าศึกษาปีการศึกษา 2569?</span>
+                                    <p class="text-slate-400 mt-0.5">สอบถามข้อมูลเพิ่มเติมผ่านทางข้อความ Facebook เพจ AI RMUTR</p>
+                                </div>
+                                <a href="https://www.facebook.com/ai.rmutr/" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-xs shrink-0 ml-3 transition-colors">
+                                    ทักแชทเพจ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Facebook Banner CTA -->
+    <section class="py-16 bg-slate-950 border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-blue-500/30 bg-gradient-to-b from-slate-900/90 to-blue-950/30">
+                <i class="fa-brands fa-facebook text-5xl text-blue-500 mb-4 animate-bounce"></i>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">ติดตามข่าวสารการรับสมัครทาง Facebook</h3>
+                <p class="text-slate-300 text-sm max-w-xl mx-auto mb-6">
+                    รับข่าวสาร TCAS, กำหนดการรับสมัครตรง, กิจกรรม Workshop และบรรยากาศการเรียนของสาขาวิชาวิศวกรรมปัญญาประดิษฐ์ มทร.รัตนโกสินทร์ ศาลายา ได้ที่แฟนเพจอย่างเป็นทางการ
+                </p>
+                <a href="https://www.facebook.com/ai.rmutr/" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center space-x-2 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-600/30 hover:scale-105 transition-all">
+                    <i class="fa-brands fa-facebook text-lg"></i>
+                    <span>ไปยัง Facebook : facebook.com/ai.rmutr/</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-slate-800">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="574278223_813880894698581_2662769500873303401_n.jpg" 
+                             alt="AI Engineering RMUTR Logo" 
+                             class="h-10 w-auto object-contain"
+                             onerror="this.src='https://placehold.co/100x120/0b1120/00f2fe?text=AI+RMUTR'">
+                        <div>
+                            <span class="text-white font-bold text-sm block">วิศวกรรมปัญญาประดิษฐ์</span>
+                            <span class="text-xs text-slate-400">มทร.รัตนโกสินทร์ ศาลายา</span>
+                        </div>
+                    </div>
+                    <p class="text-xs leading-relaxed text-slate-400">
+                        หลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมปัญญาประดิษฐ์ (หลักสูตรใหม่ พ.ศ. 2569) คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">ลิงก์ด่วน</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#about" class="hover:text-rmutr-cyan transition-colors">เกี่ยวกับหลักสูตร</a></li>
+                        <li><a href="#faculty" class="hover:text-rmutr-cyan transition-colors">คณาจารย์ประจำสาขา</a></li>
+                        <li><a href="#curriculum" class="hover:text-rmutr-cyan transition-colors">แผนการเรียน 134 หน่วยกิต</a></li>
+                        <li><a href="#plos" class="hover:text-rmutr-cyan transition-colors">ผลลัพธ์การเรียนรู้ (PLOs)</a></li>
+                        <li><a href="#tuition" class="hover:text-rmutr-cyan transition-colors">ค่าธรรมเนียมการศึกษา</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">สถานที่ตั้ง & การติดต่อ</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-location-dot mr-2 text-rmutr-cyan"></i>96 หมู่ 3 ถนนพุทธมณฑลสาย 5 ต.ศาลายา อ.พุทธมณฑล จ.นครปฐม 73170</li>
+                        <li><i class="fa-solid fa-building mr-2 text-rmutr-cyan"></i>คณะวิศวกรรมศาสตร์ มทร.รัตนโกสินทร์ พื้นที่ศาลายา</li>
+                        <li><i class="fa-brands fa-facebook mr-2 text-blue-400"></i><a href="https://www.facebook.com/ai.rmutr/" target="_blank" class="hover:underline text-slate-300">facebook.com/ai.rmutr</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-slate-500">
+                &copy; 2026-2027 สาขาวิชาวิศวกรรมปัญญาประดิษฐ์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์ ศาลายา
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const curriculumPlan = {
+            1: [
+                { code: "AIE 1203", title: "พื้นฐานปัญญาประดิษฐ์", desc: "ภาพรวมเทคโนโลยีปัญญาประดิษฐ์ ประวัติศาสตร์ และแนวคิดการประยุกต์ใช้งาน" },
+                { code: "ENG 1110", title: "การโปรแกรมคอมพิวเตอร์", desc: "ตรรกะการเขียนโปรแกรม โครงสร้างภาษาคอมพิวเตอร์ และการแก้ปัญหาด้วยอัลกอริทึม" },
+                { code: "AIE 1202", title: "วงจรไฟฟ้าและอิเล็กทรอนิกส์เบื้องต้น", desc: "พื้นฐานฮาร์ดแวร์ วงจรไฟฟ้า และการทำงานของอุปกรณ์อิเล็กทรอนิกส์" },
+                { code: "GET 1003", title: "การคิดเชิงสถิติและการวิเคราะห์ข้อมูล", desc: "สถิติประยุกต์สำหรับการวิเคราะห์ข้อมูลเบื้องต้นในการตัดสินใจ" }
+            ],
+            2: [
+                { code: "AIE 2202", title: "การวิเคราะห์ข้อมูลด้วยโปรแกรมภาษาไพทอน", desc: "การจัดการข้อมูลด้วย Python, NumPy, Pandas และสภาพแวดล้อมวิเคราะห์ข้อมูล" },
+                { code: "AIE 2206", title: "Full Stack 1: Front-End Development", desc: "การพัฒนาส่วนติดต่อผู้ใช้เว็บแอปพลิเคชันด้วย HTML, CSS, JavaScript และ Frameworks" },
+                { code: "AIE 2207", title: "Fundamentals of Machine Learning", desc: "ทฤษฎีและอัลกอริทึมการเรียนรู้ของเครื่อง Supervised & Unsupervised Learning" },
+                { code: "AIE 2208", title: "Data Structures & Algorithms", desc: "โครงสร้างข้อมูลเบื้องต้นและขั้นสูง พร้อมการวิเคราะห์ประสิทธิภาพอัลกอริทึม" },
+                { code: "AIE 2209", title: "Data Visualization", desc: "การนำเสนอข้อมูลด้วยแผนภาพอินเทอร์แอคทีฟและการเล่าเรื่องด้วยข้อมูล" }
+            ],
+            3: [
+                { code: "AIE 3201", title: "Database Design", desc: "การออกแบบระบบฐานข้อมูล RDBMS และ NoSQL สำหรับแอปพลิเคชัน AI" },
+                { code: "AIE 3202", title: "Edge AI", desc: "การประมวลผลโมเดล AI บนอุปกรณ์ฝังตัว Microcontrollers และ IoT Nodes" },
+                { code: "AIE 3203", title: "Advanced Machine Learning & Deep Learning", desc: "โครงข่ายประสาทเทียมขั้นสูง Convolutional & Recurrent Neural Networks (PyTorch/TensorFlow)" },
+                { code: "AIE 3204", title: "Computer Vision", desc: "การประมวลผลภาพดิจิทัล การตรวจจับวัตถุ (Object Detection) และการจดจำใบหน้า" },
+                { code: "AIE 3205", title: "Full Stack 2: Back-End Development", desc: "การสร้าง RESTful APIs, Microservices และการเชื่อมต่อระบบฐานข้อมูล" },
+                { code: "AIE 3206", title: "Cloud Computing & Container", desc: "โครงสร้างระบบก้อนเมฆ Docker, Kubernetes และ MLOps Deployment" },
+                { code: "AIE 3207", title: "Big Data Analytics", desc: "การประมวลผลข้อมูลขนาดใหญ่ด้วยโครงสร้าง Distributed Data Frameworks" }
+            ],
+            4: [
+                { code: "AIE 4201", title: "Natural Language Processing (NLP)", desc: "การประมวลผลภาษาธรรมชาติ สกัดความรู้ และการวิเคราะห์ข้อความ" },
+                { code: "AIE 4202", title: "Large Language Models (LLM)", desc: "สถาปัตยกรรม Transformers, Prompt Engineering และ Fine-Tuning LLMs" },
+                { code: "AIE 4203", title: "AI Engineering Project 2", desc: "โครงงานวิศวกรรมปัญญาประดิษฐ์บูรณาการ นวัตกรรมประยุกต์ใช้งานจริง" },
+                { code: "AIE 4301", title: "Co-operative Education (CWIE)", desc: "การปฏิบัติงานจริงในสถานประกอบการ หรือการเตรียมความพร้อมสหกิจศึกษา" }
+            ]
+        };
+
+        function switchYear(year) {
+            document.querySelectorAll('.curriculum-tab-btn').forEach((btn, idx) => {
+                if (idx + 1 === year) {
+                    btn.className = "curriculum-tab-btn px-5 py-2 rounded-xl text-sm transition-all bg-gradient-to-r from-rmutr-cyan to-blue-600 text-slate-950 font-bold shadow-md";
+                } else {
+                    btn.className = "curriculum-tab-btn px-5 py-2 rounded-xl text-sm transition-all text-slate-400 hover:text-white";
+                }
+            });
+
+            const container = document.getElementById('year-content');
+            const courses = curriculumPlan[year];
+            
+            container.innerHTML = courses.map(item => `
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-rmutr-cyan/50 transition-all flex flex-col justify-between">
+                    <div>
+                        <span class="inline-block px-2.5 py-1 rounded bg-slate-900 border border-slate-700 font-mono text-xs text-rmutr-cyan font-bold mb-3">
+                            ${item.code}
+                        </span>
+                        <h4 class="text-base font-bold text-white mb-2">${item.title}</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateCalculator() {
+            const sem = parseInt(document.getElementById('sem-slider').value);
+            const feePerSem = 15000;
+            const total = sem * feePerSem;
+
+            document.getElementById('sem-count-display').innerText = `${sem} ภาคการศึกษา (${(sem/2).toFixed(1)} ปี)`;
+            document.getElementById('total-fee-display').innerText = `${total.toLocaleString()} บาท`;
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        window.onload = function() {
+            switchYear(1);
+            updateCalculator();
+        };
+    </script>
+</body>
+</html>
